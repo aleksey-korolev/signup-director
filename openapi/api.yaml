@@ -1,0 +1,62 @@
+openapi: '3.1.0'
+info:
+  version: '0.0.1'
+  title: 'Sample API'
+  description: Manage events
+
+paths:
+  /events:
+    post:
+      summary: Create an event
+      parameters:
+        - name: title
+          description: The title of an events
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: description
+          description: The title of an events
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event is created and event id is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    SpacecraftId:
+      description: The unique identifier of a spacecraft
+      type: string
+    Event:
+      type: object
+      required:
+        - id
+        - title
+        - description
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: A human readable error message
+          type: string
