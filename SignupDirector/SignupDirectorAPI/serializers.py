@@ -4,4 +4,4 @@ from .models import Participants
 class ParticipantsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participants
-        fields = ['id','name','attendance', 'accompanions','event_id']
+        fields = ['id','name','attendance', 'accompanyings','event_id']
