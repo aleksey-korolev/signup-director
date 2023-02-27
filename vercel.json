@@ -9,7 +9,7 @@
   "routes": [
       {
           "src": "(.*)",
-          "dest": "SignupDirector/wsgi.py"
+          "dest": "SignupDirector/wsgi.py:application"
       }
   ]
 }
