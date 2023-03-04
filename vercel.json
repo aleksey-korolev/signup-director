@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
       {
-          "src": "*.py",
+          "src": "SignupDirector/wsgi.py",
           "use": "@vercel/python"
       }
   ],
   "routes": [
       {
-          "src": "(.*)",
-          "dest": "SignupDirector/wsgi.py:application"
+          "src": "/(.*)",
+          "dest": "SignupDirector/wsgi.py"
       }
   ]
 }
